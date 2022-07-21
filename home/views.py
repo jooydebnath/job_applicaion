@@ -28,6 +28,13 @@ def corporateRegister(request):
 def selectCategory(request):
     return render(request, 'select_category.html')
 
+def genarelCategory(request):
+    return render(request, 'genarel_category.html')
+
+def specialSkilledCategory(request):
+    return render(request, 'special_skilled_category.html')
+
+
 
 def login(request):
     return render(request, 'login.html')
