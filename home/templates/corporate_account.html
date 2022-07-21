@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Employer Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body style="background-color: #EEEEEE;">
+    <style>
+        #id_are_you_new_entrepreneur{
+            display: inline-flex;
+        }
+        #id_are_you_new_entrepreneur_0, #id_are_you_new_entrepreneur_1{
+            margin: 0 0 0 10px;
+        }
+        .size{
+            display: inline-flex;
+        }
+    </style>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="">
+                    <div class="row">
+                      <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                          <div class="card-body">
+                              <h3 style="text-align: center;">Employer Registration Form</h3>
+                              <br>
+                              <form action="" method="POST">
+                                  {% csrf_token %}
+                                  <div class="row">
+                                      <h5>Account Information</h5>
+                                      <div class="col">
+                                          {{ corporateuser.username }}
+                                      </div>
+                                      <div class="col">
+                                          {{ corporateuser.email }}
+                                      </div>
+                                  </div>
+                                  <br/>
+                                  <div class="row">
+                                      <div class="col">
+                                          {{ corporateuser.password1 }}
+                                      </div>
+                                      <div class="col">
+                                          {{ corporateuser.password2 }}
+                                      </div>
+                                  </div>
+                                  <br/>
+                                  <div class="row">
+                                      <h5>Company Details Information</h5>
+                                      <div class="col">
+                                        {{ corporate.company_name }}
+                                      </div>
+                                      <div class="col">
+                                          {{ corporate.year_of_establishment }}
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          Company Size :
+                                          <br/>
+                                          {{ corporate.company_size }}
+                                      </div>
+                                      <br/>
+                                      <div class="col-md-6" style="margin: auto; padding: 0 0 0 100px;">
+                                          Are you new Entrepreneur ? {{ corporate.are_you_new_entrepreneur }}
+                                      </div>
+                                      <br/>
+                                      <br/>
+                                      <br/>
+                                      <br/>
+                                  </div>
+                                  <div>
+                                      <h5>Company Address *</h5>
+                                      <div class="row">
+                                          <div class="col">
+                                              {{ corporate.country }}
+                                          </div>
+                                      </div>
+                                      <br/>
+                                      <div class="row">
+                                          <div class="col-md-5">
+                                              {{ corporate.city }}
+                                          </div>
+                                          <div class="col-md-5">
+                                              {{ corporate.state }}
+                                          </div>
+                                          <div class="col-md-2">
+                                              {{ corporate.zipcode }}
+                                          </div>
+                                      </div>
+                                      <br/>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col">
+                                          {{ corporate.address }}
+                                          <br/>
+                                      </div>
+                                  </div>
+                                  <div>
+                                      <h4>Industry Type*</h4>
+                                      <br/>
+                                      <div class="row">
+                                          <div class="col-md-3">
+                                              {{ corporate.industy_category }}
+                                          </div>
+                                          <div class="col-md-5" style="padding: 0 0 0 37px;">
+                                              <div class="border border-3 rounded" style="width: 450px; height: 110px; overflow-y: scroll; padding: 5px 0px 0px 11px;">
+                                                  {{ corporate.industry_type }}
+                                              </div>
+                                          </div>
+                                          <div class="col-md-4">
+                                              {{ corporate.trade_license }}
+                                          </div>
+                                      </div>
+                                      <br/>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col">
+                                          {{ corporate.business_description }}
+                                      </div>
+                                  </div>
+                                  <br/>
+                                  <div class="row">
+                                      <div class="col">
+                                          {{ corporate.rl_no }}
+                                      </div>
+                                      <div class="col">
+                                          {{ corporate.website }}
+                                      </div>
+                                  </div>
+                                  <br/>
+                                  <hr>
+                                  <br/>
+                                  <div class="row">
+                                      <h4>Contact</h4>
+                                      <h5>Primary Contact</h5>
+                                      <div class="col">
+                                          <br/>
+                                          {{ corporate.contact_person_name }}
+                                      </div>
+                                      <div class="col">
+                                          <br/>
+                                          {{ corporate.contact_person_designation }}
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col">
+                                          <br/>
+                                          {{ corporate.contact_person_email }}
+                                      </div>
+                                      <div class="col">
+                                          <br/>
+                                          {{ corporate.contact_person_phone }}
+                                      </div>
+                                  </div>
+                                  <br/>
+                                  <div class="row">
+                                      <div class="col">
+                                          {{ corporate.accept_all }}    I Have Read Pricing Policy And Accepted It
+                                      </div>
+                                  </div>
+
+                                  <br/>
+                                  <div class="">
+                                      <button class="btn btn-dark" type="submit" name="submit"><i class="fa-solid fa-circle-arrow-right">   Register</i></button>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='User Name';
+		form_fields[1].className='form-control';
+		form_fields[2].placeholder='Email';
+		form_fields[2].className='form-control';
+		form_fields[3].placeholder='Password';
+		form_fields[3].className='form-control';
+		form_fields[4].placeholder='Confirm Password';
+		form_fields[4].className='form-control';
+		form_fields[5].placeholder='Company Name';
+		form_fields[5].className='form-control';
+		form_fields[6].placeholder='Type Conpany Establishment Year, e.g.2002';
+		form_fields[6].className='form-control';
+
+		form_fields[9].placeholder='City';
+		form_fields[9].className='form-control';
+		form_fields[10].placeholder='State';
+		form_fields[10].className='form-control';
+		form_fields[11].placeholder='ZipCode';
+		form_fields[11].className='form-control';
+
+		form_fields[26].placeholder='Trade Licence No';
+		form_fields[26].className='form-control';
+		form_fields[27].className='form-control';
+		form_fields[27].placeholder='Rl-No (Optional)';
+		form_fields[28].className='form-control';
+		form_fields[28].placeholder='Type Website URL';
+
+		form_fields[29].className='form-control';
+		form_fields[29].placeholder='Contact Person Name';
+		form_fields[30].className='form-control';
+		form_fields[30].placeholder='Contact Person Designation';
+		form_fields[31].className='form-control';
+		form_fields[31].placeholder='Contact Person Email';
+		form_fields[32].className='form-control';
+		form_fields[32].placeholder='Contact Person PhoneNumber e.g. (+91)......';
+
+
+
+		var form_selects = document.getElementsByTagName('select')
+		form_selects[0].className='form-control';
+		form_selects[1].className='form-control';
+		form_selects[2].className='form-control';
+
+
+		var form_textareas = document.getElementsByTagName('textarea')
+		form_textareas[0].className='form-control';
+		form_textareas[0].placeholder='Write Company Address';
+		form_textareas[1].className='form-control';
+		form_textareas[1].placeholder='Write Business Description';
+
+
+
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
