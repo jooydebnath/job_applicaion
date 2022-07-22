@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
 from company.models import *
+from candidates.models import *
 
 ENTREPRENEUR_CHOICE = [
     ('Y', 'Yes'),
@@ -38,3 +39,21 @@ class CreateUser(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'first_name', 'email', 'password1', 'password2']
+
+class GenarelUser(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'email', 'password1', 'password2']
+
+GENDER_CHOICE = [
+    ('M', 'Male'),
+    ('F', 'Female'),
+    ('O', 'Others'),
+]
+
+
+class GenarelCategory(forms.ModelForm):
+    gender = forms.ChoiceField(choices=GENDER_CHOICE, widget=forms.RadioSelect)
+    class Meta:
+        model = GeneralCategory
+        fields = '__all__'

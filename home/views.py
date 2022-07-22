@@ -25,11 +25,30 @@ def corporateRegister(request):
     context = {'corporateuser': corporateuser, 'corporate': corporate}
     return render(request, 'corporate_account.html', context)
 
+
+
 def selectCategory(request):
     return render(request, 'select_category.html')
 
+
 def genarelCategory(request):
-    return render(request, 'genarel_category.html')
+    genarel = GenarelCategory()
+    genareluser = CreateUser()
+    if request.method == 'POST':
+        genareluser = CreateUser(request.POST)
+        genarel = GenarelCategory(request.POST)
+        if genareluser.is_valid() & genarel.is_valid():
+            user = genareluser.save()
+            genarel = genarel.save(False)
+            genarel.user = user
+            genarel.save()
+        return redirect('login')
+
+    context = {'genarel': genarel, 'genareluser': genareluser}
+
+    return render(request, 'genarel_category.html', context)
+
+
 
 def specialSkilledCategory(request):
     return render(request, 'special_skilled_category.html')
