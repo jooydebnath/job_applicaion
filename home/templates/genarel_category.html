@@ -31,7 +31,7 @@
                 <div class="">
                     <div class="row">
                     <div class="col">
-                        <a href="{% url 'registraion_option' %}" class="btn btn-dark"><i class="fa-solid fa-circle-arrow-left">   back</i></a>
+                        <a href="{% url 'select-category' %}" class="btn btn-dark"><i class="fa-solid fa-circle-arrow-left">   back</i></a>
                     </div>
                     <br/>
                     <br/>
@@ -88,7 +88,7 @@
                                           {{ genarel.agree }}    I agree to the jobs.com Terms of use.
                                       </div>
                                   </div>
-
+                                  {{ form.errors }}
                                   <br/>
                                   <br/>
                                   <div class="">

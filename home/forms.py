@@ -40,10 +40,7 @@ class CreateUser(UserCreationForm):
         model = User
         fields = ['username', 'first_name', 'email', 'password1', 'password2']
 
-class GenarelUser(UserCreationForm):
-    class Meta:
-        model = User
-        fields = ['username', 'first_name', 'email', 'password1', 'password2']
+
 
 GENDER_CHOICE = [
     ('M', 'Male'),
@@ -56,4 +53,16 @@ class GenarelCategory(forms.ModelForm):
     gender = forms.ChoiceField(choices=GENDER_CHOICE, widget=forms.RadioSelect)
     class Meta:
         model = GeneralCategory
+        fields = '__all__'
+
+class SpecialCategory(forms.ModelForm):
+    gender = forms.ChoiceField(choices=GENDER_CHOICE, widget=forms.RadioSelect)
+    class Meta:
+        model = SpecialSkilledCategory
+        fields = '__all__'
+
+class AutismCategory(forms.ModelForm):
+    gender = forms.ChoiceField(choices=GENDER_CHOICE, widget=forms.RadioSelect)
+    class Meta:
+        model = AutismCategory
         fields = '__all__'

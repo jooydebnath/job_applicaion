@@ -59,6 +59,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'jobapplication.urls'
 
+LOGIN_URL = "/login"
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

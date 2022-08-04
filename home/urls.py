@@ -10,7 +10,9 @@ urlpatterns = [
     path('select-category/', views.selectCategory, name='select-category'),
     path('genarel-category/', views.genarelCategory, name='genarel-category'),
     path('special-skilled-category/', views.specialSkilledCategory, name='special-skilled-category'),
+    path('autism-category/', views.autismCategory, name='autism-category'),
 
 
-    path('login/', views.login, name='login')
+    path('login/', views.loginUser, name='login'),
+    path('logout/', views.logoutUser, name='logout')
 ]
